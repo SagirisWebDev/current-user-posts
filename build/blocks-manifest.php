@@ -24,7 +24,10 @@ return array(
 			)
 		),
 		'supports' => array(
-			'html' => false
+			'html' => false,
+			'layout' => true,
+			'align' => true,
+			'ariaLabel' => true
 		),
 		'keywords' => array(
 			'my posts',

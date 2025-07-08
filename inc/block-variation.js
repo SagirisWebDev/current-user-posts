@@ -74,14 +74,12 @@ wp.domReady( () => {
     allowedControls: [
       'inherit',
       'postType',
-			'perPage',
       'order',
-			'offset',
       'sticky',
-      'taxonomy',
+      'taxQuery',
       'search',
       'format',
-      'parent',
+      'parents',
     ]
   } );
 } );

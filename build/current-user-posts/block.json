@@ -21,7 +21,10 @@
     }
   },
   "supports": {
-    "html": false
+    "html": false,
+    "layout": true,
+    "align": true,
+    "ariaLabel": true
   },
   "keywords": [
     "my posts",
