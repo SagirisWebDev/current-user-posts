@@ -1,0 +1,1 @@
+console.log("Hello World! (from current-user-posts-current-user-posts block)");
