@@ -80,6 +80,7 @@ wp.domReady( () => {
       'search',
       'format',
       'parents',
+			// author controls removed
     ]
   } );
 } );

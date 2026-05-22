@@ -8,50 +8,55 @@ Stable tag:        0.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Example block scaffolded with Create Block tool.
+Scaffolded with the Create Block tool.
 
 == Description ==
 
-This is the long description. No limit, and you can use Markdown (as well as in the following sections).
+Current User Posts lets you display posts created by the logged in user automatically in a block theme.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+This block is essential for creating member's only areas on your website. Displaying the posts of the current user dynamically is an industry-standard feature of online membership sytems, and Current User Posts brings that to the Block Editor.
+
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+- Upload the plugin files to the `/wp-content/plugins/current-user-posts` directory, or install the plugin through the WordPress plugins screen directly.
 
-e.g.
+== Usage ==
 
-1. Upload the plugin files to the `/wp-content/plugins/current-user-posts` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
+A valid user id is required for this block to work, so it must be placed in a context that is only available to logged in users.
 
+Only logged in users should be able to see the block.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+== I see my posts show up in the block editor instead of the user's. 
 
-An answer to that question.
+That means the block is working. Since you are the current user when working in the block editor, your posts will be displayed in the block. When another user logs in and views the block, they will see posts they created.
 
-= What about foo bar? =
+== Can I add, remove, or rearrange the inner blocks? ==
 
-Answer to foo bar dilemma.
+The block supports ONLY one instance of the Query Loop block inside of it. However, you can change the blocks inside of the inner Query Loop block.
+
+== I've inserted the block onto my page, but I'm not seeing my posts. ==
+
+Make sure you have posts of the selected post type to display. If you're selected pattern doesn't contain a no-results block, you will not see a message alerting you that there aren't any posts of that post type to display.
+
+== The block says I need to log in to see my posts. ==
+
+This block is only meant to be seen by registered users of the website, i.e. they must be a Wordpress user with a valid user account. Any visitor to the website who isn't logged in to an account will not be able to see posts in the block.
+The block should only be visible to users after they have logged in.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. A rudimentary example of the Current User Posts block against the Query Loop block.
+2. Using the block in the editor.
 
 == Changelog ==
 
-= 0.1.0 =
-* Release
+- 0.1.0 - Release
 
-== Arbitrary section ==
+== Upgrade Notice ==
 
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
+== Donate ==
+
+https://sagirisdev.com/donate

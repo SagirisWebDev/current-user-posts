@@ -12,7 +12,9 @@ This block is essential for creating member's only areas on your website. Displa
 
 ## Usage 
 
-A valid user id is required for this block to work, so it must be placed in a context that is only available to logged in users, i.e. only logged in users should be able to see the block.
+A valid user id is required for this block to work, so it must be placed in a context that is only available to logged in users.
+
+**Only logged in users should be able to see the block.**
 
 ## Frequently Asked Questions 
 
@@ -22,11 +24,11 @@ That means the block is working. Since you are the current user when working in 
 
 ### Can I add, remove, or rearrange the inner blocks?
 
-Yes, any inner blocks supported by the query loop block are supported by the block.
+The block supports ONLY one instance of the Query Loop block inside of it. However, you can change the blocks inside of the inner Query Loop block.
 
 ### I've inserted the block onto my page, but I'm not seeing my posts.
 
-Make sure you have posts of the selected post type to display. If you're selected pattern doesn't contain a no-results block, you will not see a message alerting you that there aren't any posts of that post type to display.
+Make sure you have published posts of the selected post type to display. If you're selected pattern doesn't contain a no-results block, you will not see a message alerting you that there aren't any posts of that post type to display.
 
 ### The block says I need to log in to see my posts.
 
@@ -35,12 +37,15 @@ This block is only meant to be seen by registered users of the website, i.e. the
 
 ## Screenshots 
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. A rudimentary example of the Current User Posts block against the Query Loop block.
+2. Using the block in the editor.
 
 ## Changelog 
 
 - 0.1.0 - Release
+
+## Upgrade Notice
+
+## Donate
+
+https://sagirisdev.com/donate
