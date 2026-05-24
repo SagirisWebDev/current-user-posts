@@ -20,27 +20,9 @@
  * - `InnerBlocks`: Allows nesting child blocks (like `core/query`).
  */
 import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
-
-/**
- * React hook that selects records from the store.
- * 
- * @see {@link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/#useselect}
- */
 import { useSelect } from "@wordpress/data";
-
-/**
- * React hook that is used to run side effects in our block.
- * 
- * @see {@link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/#useeffect}
-*/
 import { useEffect } from "@wordpress/element";
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see {@link https://www.npmjs.com/package/@wordpress/scripts#using-css}
- */
+import { VARIATION_NAMESPACE, DEFAULT_QUERY } from "./constants";
 import "./editor.scss";
 
 /**
@@ -73,23 +55,8 @@ export default function Edit( { attributes, setAttributes } ) {
 	 */
 	const template = [
 		[ "core/query", {
-			namespace: "sagiriswd/current-user-posts-query",
-			query: {
-				perPage: null,
-				pages: 0,
-				offset: 0,
-				postType: "post",
-				order: "desc",
-				orderBy: "date",
-				author: currentUser.id,
-				search: "",
-				exclude: [],
-				sticky: "",
-				inherit: true,
-				taxQuery: null,
-				parents: [],
-				format: []
-			},
+			namespace: VARIATION_NAMESPACE,
+			query: { ...DEFAULT_QUERY, author: currentUser?.id ?? 0 },
 		} ]
 	];
 

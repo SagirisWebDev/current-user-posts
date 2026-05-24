@@ -1,0 +1,35 @@
+# Directories
+/.git
+/.github
+/.claude
+/.swd-harness
+/node_modules
+/src
+
+# Dev configuration
+/.gitignore
+/.distignore
+/webpack.config.js
+/package.json
+/package-lock.json
+/composer.json
+/composer.lock
+
+# Editor / OS
+/.DS_Store
+.DS_Store
+/.editorconfig
+/.vscode
+/.idea
+
+# Docs / dev artifacts not meant for end users
+/README.md
+/CLAUDE.md
+/diff-render-php.html
+/diff-render-php.log
+/diff-save-js.html
+/diff-save-js.log
+
+# Screenshots live in the SVN /assets/ folder, not in the plugin zip
+/screenshot-1.png
+/screenshot-2.png

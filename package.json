@@ -1,6 +1,6 @@
 {
 	"name": "current-user-posts",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Display posts created by the current user.",
 	"author": "Sagiris Web Development",
 	"license": "GPL-2.0-or-later",

@@ -1,50 +1,24 @@
 <?php
 /**
- * Renders the Current User Posts custom query block.
+ * Render callback for the Current User Posts block.
  *
- * This file is used as the `render` callback for the block defined in `block.json`.
- * It populates the `author` field in the query dynamically with the current user’s ID
- * before rendering the nested Query Loop block.
+ * WordPress provides $attributes, $content, and $block before including this file.
  *
  * @package Sagiriswd\CurrentUserPosts
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
  *
- * @global array $attributes Block attributes passed from the block editor.
- * @global WP_Block $block The full parsed block object from the block editor.
+ * @var array    $attributes Block attributes.
+ * @var string   $content    Serialized inner block HTML.
+ * @var WP_Block $block      The current block instance.
  */
 
- if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-?>
-<div <?php echo get_block_wrapper_attributes(); ?>>
-		<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-			/**
-			 * Get the current user ID.
-			 *
-			 * @var int $id Current logged-in user ID. 0 if not logged in.
-			 */
-			$id = get_current_user_id() ?? 0;
+use Sagiriswd\CurrentUserPosts\Block_Renderer;
 
-			// Show message if no user is logged in.
-			if ( 0 === $id ) {
-				return esc_html_e('Log in to see your posts', 'current-user-posts' );
-			}
-			
-			// Dynamically inject current user ID into attributes.
-			$attributes['currentUserId'] = $id;
+require_once dirname( __DIR__, 2 ) . '/includes/class-block-renderer.php';
 
-			// Set the author ID inside the inner query block.
-			$block->parsed_block['innerBlocks'][0]['attrs']['query']['author'] = $id;
-
-			/**
-			 * Render each of the inner blocks using render_block().
-			 *
-			 * @var array $innerBlocks Array of parsed inner block objects.
-			 * @var \WP_Block $block Individual block object in loop.
-			 */
-			$innerBlocks = $block->parsed_block['innerBlocks'];
-			foreach( $innerBlocks as $block ) {
-				echo render_block($block);
-			}
-	?>
-</div>
+// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Block_Renderer::render() returns HTML composed from get_block_wrapper_attributes(), esc_html__(), and render_block() (WordPress core's trusted block renderer). The return value is intentionally HTML and must not be passed through esc_html().
+echo ( new Block_Renderer() )->render( $attributes, $content, $block );
