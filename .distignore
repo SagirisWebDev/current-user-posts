@@ -31,6 +31,3 @@
 /diff-save-js.html
 /diff-save-js.log
 
-# Screenshots live in the SVN /assets/ folder, not in the plugin zip
-/screenshot-1.png
-/screenshot-2.png
