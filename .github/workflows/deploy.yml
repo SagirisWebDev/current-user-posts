@@ -37,6 +37,7 @@ jobs:
           SVN_USERNAME: ${{ secrets.SVN_USERNAME || 'dry-run-placeholder' }}
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD || 'dry-run-placeholder' }}
           SLUG: current-user-posts
+          VERSION: ${{ github.event_name == 'workflow_dispatch' && 'dry-run' || github.ref_name }}
         with:
           generate-zip: true
           dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry-run }}
