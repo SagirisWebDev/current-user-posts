@@ -1,6 +1,7 @@
 # Directories
 /.git
 /.github
+/.wordpress-org
 /.claude
 /.swd-harness
 /node_modules
